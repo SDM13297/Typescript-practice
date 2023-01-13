@@ -21,11 +21,10 @@ window.onload = function () {
     board = document.getElementById("board");
     board.height = rows * blocksize;
     board.width = cols * blocksize;
-    context = board.getContext("2d"); //used for drawing on the board
+    context = board.getContext("2d"); 
 
     placeFood();
     document.addEventListener("keyup", changeDirection);
-    // update();
     setInterval(update, 1000 / 10);
 }
 
@@ -60,7 +59,6 @@ function update() {
         context.fillRect(snakeBody[i][0], snakeBody[i][1], blocksize, blocksize);
     }
 
-    //game over conditions
     if (snakeX < 0 || snakeX > cols * blocksize || snakeY < 0 || snakeY > rows * blockSize) {
         gameOver = true;
         alert("Game Over");
