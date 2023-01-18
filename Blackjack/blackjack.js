@@ -8,7 +8,7 @@ var yourAceCount = 0;
 var hidden;
 var deck;
 
-var canHit = true; //allows the player (you) to draw while yourSum <= 21
+var canHit = true; 
 
 window.onload = function() {
     buildDeck();
@@ -26,7 +26,6 @@ function buildDeck() {
             deck.push(values[j] + "-" + types[i]); //A-C -> K-C, A-D -> K-D
         }
     }
-    // console.log(deck);
 }
 
 function shuffleDeck() {
@@ -43,10 +42,7 @@ function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
     dealerAceCount += checkAce(hidden);
-    // console.log(hidden);
-    // console.log(dealerSum);
     while (dealerSum < 17) {
-        //<img src="./cards/4-C.png">
         let cardImg = document.createElement("img");
         let card = deck.pop();
         cardImg.src = "./cards/" + card + ".png";
@@ -103,7 +99,6 @@ function stay() {
     else if (dealerSum > 21) {
         message = "You win!";
     }
-    //both you and dealer <= 21
     else if (yourSum == dealerSum) {
         message = "Tie!";
     }
@@ -120,10 +115,10 @@ function stay() {
 }
 
 function getValue(card) {
-    let data = card.split("-"); // "4-C" -> ["4", "C"]
+    let data = card.split("-"); 
     let value = data[0];
 
-    if (isNaN(value)) { //A J Q K
+    if (isNaN(value)) { 
         if (value == "A") {
             return 11;
         }
