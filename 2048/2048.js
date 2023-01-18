@@ -32,7 +32,7 @@ function setGame() {
 
 function updateTile(tile, num) {
     tile.innerText = "";
-    tile.classList.value = ""; //clear the classList
+    tile.classList.value = ""; 
     tile.classList.add("tile");
     if (num > 0) {
         tile.innerText = num.toString();
@@ -66,7 +66,7 @@ document.addEventListener('keyup', (e) => {
 })
 
 function filterZero(row){
-    return row.filter(num => num != 0); //create new array of all nums != 0
+    return row.filter(num => num != 0); 
 }
 
 function slide(row) {
